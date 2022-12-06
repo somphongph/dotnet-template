@@ -38,7 +38,7 @@ namespace Infrastructure.Repositories
         public virtual async Task AddAsync(TDocument obj)
         {
             var dtUtcNow = DateTime.UtcNow;
-            var userId = _contextAccessor.UserIdString();
+            var userId = _contextAccessor.UserId();
 
             obj.Status = RecordStatus.Active.Code();
             obj.CreatedOn = dtUtcNow;
@@ -52,7 +52,7 @@ namespace Infrastructure.Repositories
         public virtual async Task UpdateAsync(TDocument obj)
         {
             var dtUtcNow = DateTime.UtcNow;
-            var userId = _contextAccessor.UserIdString();
+            var userId = _contextAccessor.UserId();
 
             obj.UpdatedOn = dtUtcNow;
             obj.UpdatedBy = userId;
@@ -64,7 +64,7 @@ namespace Infrastructure.Repositories
         public virtual async Task DeleteAsync(TDocument obj)
         {
             var dtUtcNow = DateTime.UtcNow;
-            var userId = _contextAccessor.UserIdString();
+            var userId = _contextAccessor.UserId();
 
             obj.Status = RecordStatus.Deleted.Code();
             obj.DeletedOn = dtUtcNow;

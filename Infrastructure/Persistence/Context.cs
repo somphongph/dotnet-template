@@ -20,7 +20,7 @@ namespace Infrastructure.Persistence
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default(CancellationToken))
         {
             var dtUtcNow = DateTime.UtcNow;
-            Guid? userId = _contextAccessor.UserId();
+            Guid? userId = new Guid(_contextAccessor.UserId() ?? "");
             var entries = ChangeTracker.Entries<BaseEntity>();
             foreach (var entry in entries)
             {
