@@ -3,6 +3,7 @@
 ## Technology Concept
 
 Microservice
+DDD
 CQRS
 Base Entity
 Base SQL Repository
