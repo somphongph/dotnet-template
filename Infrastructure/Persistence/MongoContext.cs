@@ -3,11 +3,11 @@ using MongoDB.Driver;
 
 namespace Infrastructure.Persistence
 {
-    public class MongoDbContext : IMongoDbContext
+    public class MongoContext : IMongoContext
     {
         private IMongoDatabase _db { get; set; }
         private MongoClient _mongoClient { get; set; }
-        public MongoDbContext(IMongoDbSettings settings)
+        public MongoContext(IMongoSettings settings)
         {
             _mongoClient = new MongoClient(settings.ConnectionString);
             _db = _mongoClient.GetDatabase(settings.DatabaseName);

@@ -1,6 +1,6 @@
 namespace Infrastructure.Persistence
 {
-    public interface IMongoDbSettings
+    public interface IMongoSettings
     {
         string ConnectionString { get; set; }
         string DatabaseName { get; set; }

@@ -2,7 +2,7 @@ using MongoDB.Driver;
 
 namespace Infrastructure.Persistence
 {
-    public interface IMongoDbContext
+    public interface IMongoContext
     {
         IMongoCollection<TDocument> GetCollection<TDocument>(string name);
     }
